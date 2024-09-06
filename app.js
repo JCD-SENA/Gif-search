@@ -37,5 +37,8 @@ const getGifs = async (url) => {
 
 window.addEventListener("DOMContentLoaded", () => getGifs(url_trend))
 characterSearch.addEventListener("keyup", async (e) => {
-	getGifs(url_search+e.target.value)
+	if (e.target.value.length > 0)
+		getGifs(url_search+e.target.value)
+	else
+		getGifs(url_trend)
 })
